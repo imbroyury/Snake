@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+    <script defer src="dist/bundle.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+
+<div class="player-name-modal">
+    <form class="player-name-form" name="nameform">
+        <label for="player-name-text">Enter your name:</label>
+        <input type="text" id="player-name-text" name="nameinput" placeholder="Destroyer333" required>
+        <div class="error-message"></div>
+        <button id="player-name-submit-btn">Let's go!</button>
+    </form>
+</div>
+
+<div class="game-controls">
+    <h1 class="game-header">SNAKE</h1>
+    <div class="game-info">
+        <div>Press SPACE to start</div>
+        <div>Control with ▲ ▼ ◀ ▶ or WASD</div>
+    </div>
+    <div class="score-message"><span id="score-name"></span><span>score:</span><span id="score">0</span></div>
+    <div id="game-end-msg">You lost! Start a new game</div>
+</div>
+
+<div class="canvas-wrap">
+    <canvas id="canvas"></canvas>
+</div>
+
+
+<div class="leaderboard-wrap">
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr></tbody>
+    </table>
+</div>
+
+</body>
+</html>

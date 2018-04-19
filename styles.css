@@ -1,0 +1,126 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 600px;
+}
+body {
+  font-family: 'Press Start 2P', cursive;
+  display: grid;
+  grid-template-columns: 1fr minmax(500px, 1fr);
+  grid-template-rows: 300px 1fr;
+  grid-template-areas: "game-controls game-controls" "canvas leaderboard";
+}
+.player-name-modal {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player-name-modal .player-name-form {
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.player-name-modal .player-name-form > * {
+  margin-bottom: 10px;
+}
+.player-name-modal .player-name-form > *:last-child {
+  margin-bottom: 0;
+}
+.player-name-modal .player-name-form .error-message {
+  color: red;
+  font-size: 0.8em;
+}
+.player-name-modal .player-name-form #player-name-text {
+  border: 3px solid black;
+  font: inherit;
+  padding: 3px;
+  transition: all .3s;
+}
+.player-name-modal .player-name-form #player-name-text:focus {
+  outline: none;
+  background-color: black;
+  color: white;
+}
+.player-name-modal .player-name-form #player-name-submit-btn {
+  outline: none;
+  padding: 7px;
+  border: 3px solid black;
+  background-color: white;
+  font: inherit;
+  font-size: 0.8em;
+  transition: all .3s;
+}
+.player-name-modal .player-name-form #player-name-submit-btn:hover {
+  background-color: black;
+  color: white;
+}
+.game-controls {
+  grid-area: game-controls;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.game-controls div {
+  margin: 7px;
+}
+.game-controls .game-info {
+  padding: 7px;
+  border: 3px solid black;
+  text-align: center;
+}
+.game-controls #game-end-msg {
+  visibility: hidden;
+  opacity: 0;
+  color: darkred;
+}
+.game-controls #game-end-msg.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: all .3s;
+}
+.canvas-wrap {
+  grid-area: canvas;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.canvas-wrap #canvas {
+  border: 1px solid black;
+}
+.leaderboard-wrap {
+  grid-area: leaderboard;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.leaderboard-wrap .leaderboard-table {
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+.leaderboard-wrap .leaderboard-table th,
+.leaderboard-wrap .leaderboard-table td {
+  padding: 5px;
+  border: 2px solid black;
+}
+.leaderboard-wrap .leaderboard-table tbody tr:first-child {
+  color: darkred;
+}
+@media (max-width: 1100px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 600px 500px;
+    grid-template-areas: "game-controls" "canvas" "leaderboard";
+  }
+}
