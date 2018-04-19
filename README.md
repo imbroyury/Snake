@@ -12,5 +12,6 @@ Classic Snake Game
 
 ## Build using: 
 * HTML5 Canvas
+* RequestAnimationFrame
 * LocalStorage
 * [randomColor library](https://github.com/davidmerfield/randomColor)
