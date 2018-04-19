@@ -16,6 +16,16 @@ export default class Game {
         this.playerName = playerName;
         this.gameEndCallback = gameEndCallback;
         this.prepareGame();
+        this.keyDirectionMap = new Map([
+            [38, {x: 0, y: -1}],
+            [87, {x: 0, y: -1}],
+            [40, {x: 0, y: 1}],
+            [83, {x: 0, y: 1}],
+            [37, {x: -1, y: 0}],
+            [65, {x: -1, y: 0}],
+            [39, {x: 1, y: 0}],
+            [68, {x: 1, y: 0}]
+        ]);
     }
 
     prepareGame() {
@@ -97,17 +107,9 @@ export default class Game {
     handleEvent(event) {
         if (event.type === 'keydown') {
             const keyCode = event.keyCode;
-            if (keyCode === 38 || keyCode === 40 || keyCode === 37 || keyCode === 39) {
+            if (this.keyDirectionMap.has(keyCode)) {
                 event.preventDefault();
-            }
-            if (keyCode === 38 || keyCode === 87) {
-                this.snake.scheduleMovementDirectionChange({x: 0, y: -1});
-            } else if (keyCode === 40 || keyCode === 83) {
-                this.snake.scheduleMovementDirectionChange({x: 0, y: 1});
-            } else if (keyCode === 37 || keyCode === 65) {
-                this.snake.scheduleMovementDirectionChange({x: -1, y: 0});
-            } else if(keyCode === 39 || keyCode === 68) {
-                this.snake.scheduleMovementDirectionChange({x: 1, y: 0});
+                this.snake.scheduleMovementDirectionChange(this.keyDirectionMap.get(keyCode));
             }
         }
     }
