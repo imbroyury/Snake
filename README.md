@@ -15,3 +15,9 @@ Classic Snake Game
 * RequestAnimationFrame
 * LocalStorage
 * [randomColor library](https://github.com/davidmerfield/randomColor)
+
+## Demo:
+[CodePen](https://codepen.io/iy2/full/KoOpjx/)
+
+## ToDo:
+* Optimize for smaller screens
