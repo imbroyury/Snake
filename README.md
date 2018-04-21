@@ -17,7 +17,7 @@ Classic Snake Game
 * [randomColor library](https://github.com/davidmerfield/randomColor)
 
 ## Demo:
-[CodePen](https://codepen.io/iy2/full/KoOpjx/)
+[CodePen](https://codepen.io/imbroyury/full/GdJbZb/)
 
 ## ToDo:
 * Optimize for smaller screens
